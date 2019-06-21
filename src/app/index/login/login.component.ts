@@ -18,10 +18,6 @@ export class LoginComponent implements OnInit {
     if (this.authService.loginAction(formData)) {
      this.routerNavigate.navigate(['dashboard']);
    }
-  //  if(rememberMe){
-  //   localStorage.setItem('Name', credentials.firstName);
-  //   localStorage.setItem('RememberMe', JSON.stringify(this.rememberMe));
-  // }
   }
 
   ngOnInit() {
