@@ -6,33 +6,28 @@ declare var $: any;
 
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  OBSLoginForm:FormGroup;
-  constructor(private fb:FormBuilder,private authService:AuthService,private routerNavigate:Router) {}
+  OBSLoginForm: FormGroup;
+  constructor(private fb: FormBuilder,private authService: AuthService, private routerNavigate:Router) {}
 
-  LoginAction(formData:any) {
-    if(this.authService.loginAction(formData)){
+  LoginAction(formData: any) {
+    if (this.authService.loginAction(formData)) {
      this.routerNavigate.navigate(['dashboard']);
    }
-  
+  //  if(rememberMe){
+  //   localStorage.setItem('Name', credentials.firstName);
+  //   localStorage.setItem('RememberMe', JSON.stringify(this.rememberMe));
+  // }
   }
 
   ngOnInit() {
-    $(document).ready(function () {
-      $('.login-content [data-toggle="flip"]').click(function() {
-      	$('.login-box').toggleClass('flipped');
-      	return false;
-      });
-      });
-
-
     this.OBSLoginForm = this.fb.group({
-      'username': [null,Validators.required],
-      'password': [null,Validators.required]
+      'username': [null, Validators.required],
+      'password': [null, Validators.required]
     });
   }
 
