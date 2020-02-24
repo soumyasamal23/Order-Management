@@ -11,7 +11,7 @@
     "mock:server": "json-server --watch Json-Server/db.json",
     "start:proxy": "ng serve --proxy-config proxy.conf.json",
     "start:proxy:mock:server": "concurrently — kill-others \"npm run mock:server\" \"npm run start:proxy\"",
-    "postinstall": "ng build --aot --prod"
+   "heroku-postbuild": "ng build --prod"
   },
     "engines": {
     "node": ">=7.6.0",
@@ -21,6 +21,8 @@
   "dependencies": {
     "@angular/animations": "~7.1.0",
     "@angular/common": "~7.1.0",
+    "@angular/cli": "~7.1.4",
+    "@angular/compiler-cli": "~7.1.0",
     "@angular/compiler": "~7.1.0",
     "@angular/core": "~7.1.0",
     "@angular/forms": "~7.1.0",
@@ -32,7 +34,8 @@
     "node-sass": "^4.13.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "typescript": "~3.1.6"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.1",
